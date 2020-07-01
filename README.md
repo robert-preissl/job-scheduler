@@ -94,5 +94,6 @@ as an alternative static analysis approach.
 
 Testing of some simple scenarios done via GTest suite.
 
-
+Build with *make test_job_scheduler* and run the *test_job_scheduler* executable to run
+all test scenarios.
 
