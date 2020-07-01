@@ -37,16 +37,16 @@ class ExecutionContext {
             return id_;
         }
 		
-		/// \brief Execute a given function within a certain execution context (meaning
-		///        start the execution when tasks we depend on are done.
-		///        In this function execution is handled by independent threads
+        /// \brief Execute a given function within a certain execution context (meaning
+        ///        start the execution when tasks we depend on are done.
+        ///        In this function execution is handled by independent threads
         /// \param[in] Function to be executed. Parameterless, i.e., the job scheduler has
         ///            already provided/bound all the necessary params. Also no return
         ///            value for the given function since it operates on a state object.
         /// \param[in] A representation of the underlying system, which keeps track of
         ///            running workers (here: threads) and their state
         /// \return None
-		void Execute(std::function<void()> work,
+        void Execute(std::function<void()> work,
                      System& s) {
 
             #ifdef __DEBUG__
@@ -66,9 +66,9 @@ class ExecutionContext {
                       std::move(std::async(Chain, wait_for_parent_tasks, work))
                       );
 			
-			#ifdef __DEBUG__
+            #ifdef __DEBUG__
                 std::cout << "ExecutionContext: #" << id_ << " scheduled " << std::endl;
             #endif
-		}
+        }
 };
 
