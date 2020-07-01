@@ -1,7 +1,10 @@
 # job-scheduler
 Topological sorting of dependent tasks via Kahn's algorithm + resource optimal execution via threads
 
-# High-level goal:
+<br />
+<br />
+
+# High-level goal
 
 Design of a (C++ based) job scheduling algorithm to execute on interdepend tasks.
 
@@ -13,6 +16,9 @@ Tasks scheduled in such a topological order are executed by independent threads 
 A main objective of this scheduler is to ensure that a certain constant number of actively
 running executions is not exceeded. This is to ensure tasks are given optimal resources
 to finish execution rather than executing hundreds or thousands of tasks at the same time.
+
+<br />
+<br />
 
 # Example
 
@@ -48,16 +54,13 @@ The resulting operating sequence is 0, 1, 3, 2, 5, 4, 6
 <br />
 <br />
 
-# Building blocks:
+# Building blocks
 
 Two important building blocks of this implementation:
 
 ## Scheduler
 
 Applies Kahn's algorithm to create and schedule tasks. It also ensure not to overload the system.
-
-<br />
-<br />
 
 ## Execution Context
 
@@ -68,6 +71,8 @@ it depends on. if there are other tasks which are still running we stall until t
 In the code, the waiting of parent tasks plus the work execution are chained together and
 passed to *std::async*, which result is a *std::future* we keep track of.
 
+<br />
+<br />
 
 # Correctness -- static and dynamic code analysis:
 
@@ -81,6 +86,9 @@ Implementation can be seen in the *Makefile*
 
 In addition, [scan-build make](https://clang-analyzer.llvm.org/scan-build.html) can be run
 as an alternative static analysis approach.
+
+<br />
+<br />
 
 # Testing
 
