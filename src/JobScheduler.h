@@ -44,7 +44,7 @@ class JobScheduler {
         // E.g., key: 6 -> value: [3,4,5]  means that task 6 depends on taks 3,4 and 5
         std::unordered_map<uint32_t, std::vector<uint32_t>> parent_tasks_;
 		
-        // E.g., key: 0 -> value: 2  means that task 0 depends on 2 other tasks
+        // E.g., key: 0 -> value: 1  means that task 0 has an indegree of 1
         std::unordered_map<uint32_t, uint32_t> indegrees_;
 		
         // Data structure to compute the topological sorting of tasks/ExecutionContexts
