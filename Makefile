@@ -42,9 +42,9 @@ GTEST_LINK = -L$(GTEST_BUILD_DIR) -lgtest -lgtest_main
 
 
 
-DEPS = ExecutionContext.h System.h State.h
-OBJ_MAIN = JobScheduler.o System.o main.o
-OBJ_TEST = JobScheduler.o System.o test/testAllMain.o test/TestJobScheduler.o
+DEPS = src/ExecutionContext.h src/System.h src/State.h
+OBJ_MAIN = src/JobScheduler.o src/System.o src/main.o
+OBJ_TEST = src/JobScheduler.o src/System.o test/testAllMain.o test/TestJobScheduler.o
 
 %.o: %.cpp $(DEPS)
 	$(CXX) -c -o $@ $< $(CXXFLAGS) $(THREAD_SAFETY_ANALYZER) $(CXX_WARNINGS)
@@ -56,4 +56,4 @@ test_job_scheduler: $(OBJ_TEST)
 	$(CXX) -o $@ $^ $(CXXFLAGS) $(GTEST_INCL) $(GTEST_LINK)
 
 clean:
-	rm job_scheduler test_job_scheduler *.o test/*.o
+	rm job_scheduler test_job_scheduler src/*.o test/*.o

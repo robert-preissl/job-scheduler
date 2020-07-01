@@ -1,7 +1,7 @@
 
 #include "gtest/gtest.h"
 
-#include "./../JobScheduler.h"
+#include "./../src/JobScheduler.h"
 
 class TestJobSchedulerFixture : public ::testing::Test {
     protected:
