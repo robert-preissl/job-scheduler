@@ -13,7 +13,7 @@ template <class T>
 class GlobalState {
     private:
         // use clang's thread safety analyzer https://clang.llvm.org/docs/ThreadSafetyAnalysis.html
-		Mutex mutex_;
+        Mutex mutex_;
         T state_ GUARDED_BY(mutex_); // ensure that shared global state alteration is
                                      //  performed in thread safe manner
 
@@ -23,7 +23,7 @@ class GlobalState {
             std::cout << "GlobalState destructed!" << std::endl;
         }
 		
-		/// \brief Change state
+        /// \brief Change state
         /// \param[in] Some data element, which is incorporated into the state
         /// \return None.
         void Add(T x) {
@@ -33,7 +33,7 @@ class GlobalState {
             mutex_.Unlock();
         }
 		
-		/// \brief Print state
+        /// \brief Print state
         /// \return None.
         void Print() {
             mutex_.Lock();
@@ -41,7 +41,7 @@ class GlobalState {
             mutex_.Unlock();
         }
 
-		/// \brief Return state in a thread safe manner.
+        /// \brief Return state in a thread safe manner.
         /// \return state.
         T GetState() {
             T state_copy;

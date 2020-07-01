@@ -29,7 +29,7 @@ bool System::CheckTaskDone(uint32_t task_id) {
 uint32_t System::NrRunningTasks() {
     mutex.Lock();
     uint32_t nr_running = 0;
-	std::chrono::milliseconds span(10);
+    std::chrono::milliseconds span(10);
     for(const auto& t: task_map) {
         if(t.second.wait_for(span) == std::future_status::timeout) {
             nr_running++;

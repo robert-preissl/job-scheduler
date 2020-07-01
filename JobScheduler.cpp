@@ -61,8 +61,8 @@ bool JobScheduler<T>::EnforceLoadLimit() {
     uint32_t cycles = 0;
 
     #ifdef __DEBUG__
-	    std::cout << " -> nr_running_tasks = " << system_.NrRunningTasks() << std::endl;
-	#endif
+        std::cout << " -> nr_running_tasks = " << system_.NrRunningTasks() << std::endl;
+    #endif
 	
     while(system_.NrRunningTasks() > max_concurrent_tasks_) {
         std::this_thread::sleep_for(std::chrono::milliseconds(100));

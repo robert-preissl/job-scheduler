@@ -28,6 +28,7 @@ int main() {
 	
 	job_ptr->PrintIndegrees();	
 	bool success = job_ptr->ProcessTasks();
+	std::cout << "Success = " << success << std::endl;
 
 	std::this_thread::sleep_for(std::chrono::seconds(20));
 
