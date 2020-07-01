@@ -13,7 +13,7 @@ a topological ordering is possible if and only if the graph has no cycles, i.e.,
 (Any DAG has at least one topological ordering)
 
 Tasks scheduled in such a topological order are executed by independent threads (via *std::async*).
-A main objective of this scheduler is to ensure that a certain constant number of actively
+A main **novelty** of this scheduler is to ensure that a certain constant number of actively
 running executions is not exceeded. This is to ensure tasks are given optimal resources
 to finish execution rather than executing hundreds or thousands of tasks at the same time.
 
