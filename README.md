@@ -45,6 +45,8 @@ by keeping the number of actively running tasks below a certain threshold.
 
 The resulting operating sequence is 0, 1, 3, 2, 5, 4, 6
 
+<br />
+<br />
 
 # Building blocks:
 
@@ -53,6 +55,9 @@ Two important building blocks of this implementation:
 ## Scheduler
 
 Applies Kahn's algorithm to create and schedule tasks. It also ensure not to overload the system.
+
+<br />
+<br />
 
 ## Execution Context
 
