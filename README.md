@@ -80,9 +80,9 @@ In this project several static analysis tools were applied to ensure stability a
 Also, a dynamic analysis approach has been applied.
 Implementation can be seen in the *Makefile*
 
--  [Address Sanitizer (Static analysis)](https://clang.llvm.org/docs/AddressSanitizer.html)
--  [Thread Safety Analysis (Static analysis)](https://clang.llvm.org/docs/ThreadSafetyAnalysis.html)
--  [Memory Sanitizer (Dynamic analysis)](https://clang.llvm.org/docs/MemorySanitizer.html)
+-  [Address Sanitizer](https://clang.llvm.org/docs/AddressSanitizer.html)
+-  [Thread Safety Analysis](https://clang.llvm.org/docs/ThreadSafetyAnalysis.html)
+-  [Memory Sanitizer)](https://clang.llvm.org/docs/MemorySanitizer.html)
 
 In addition, [scan-build make](https://clang-analyzer.llvm.org/scan-build.html) can be run
 as an alternative static analysis approach.
